@@ -1,0 +1,229 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.bg-img1 {
+  background-image: url('/assets/img1.jpg');
+  height: 600px;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6;
+  position: relative;
+}
+
+.bg-img2 {
+  background-image: url('/assets/img2.jpg');
+  height: 400px;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.65;
+  position: relative;
+}
+
+.bg-img3 {
+  background-image: url('/assets/img3.jpg');
+  height: 600px;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6;
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+
+P {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.content1 {
+  color: #777;
+  background-color: white;
+  text-align: center;
+  padding: 50px 80px;
+  text-align: justify;
+
+  span {
+    line-height: 34px;
+    letter-spacing: 2px;
+  }
+
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    text-align: center;
+  }
+}
+
+.content2 {
+  position: relative;
+  text-align: center;
+  padding: 65px 80px;
+  background-color: rgb(10, 10, 10);
+
+  span {
+    line-height: 34px;
+    letter-spacing: 2px;
+    color: white;
+  }
+
+  h2 {
+    color: white;
+  }
+}
+
+.footer {
+  background-color: rgb(223 221 221);
+  padding: 60px 40px 40px;
+  align-items: center;
+}
+
+.bottom {
+  background-color: black;
+  padding: 15px;
+  text-align: center;
+
+  span {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+}
+
+.icons {
+  img {
+    width: 90%;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.navbar {
+  h5 {
+    color: black;
+    font-size: 23px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px 0px 0px 0px;
+    padding-right: 18px;
+    border-right: 2px solid #2f2f2f;
+  }
+}
+
+
+$mapColor: (
+  'green',
+  #66bb6a),
+  ('red', #ef5350),
+  ('blue', #5c6bc0),
+  ('orange', #ffa726
+);
+
+$black: #212121;
+
+.sb-textfield {
+  display: inline-block;
+  position: relative;
+  color: $black;
+
+  &__row {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background: $black;
+    transition: .5s width;
+  }
+
+  input {
+    border: 0;
+    border-bottom: 2px solid #070707;
+    padding: 5px 0;
+    background-color: rgb(223 221 221);
+    color: black;
+
+    &:focus {
+      outline: none;
+
+      +.sb-textfield__row {
+        width: 100%;
+      }
+    }
+  }
+
+  @each $class, $color1 in $mapColor {
+    &--#{$class} {
+      .sb-textfield__row {
+        background: $color1;
+      }
+    }
+  }
+}
+
+.navbar h5:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.icons img:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+#button {
+  // display: inline-block;
+  background-color: #373636;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.material-icons {
+  color: white;
+  font-size: 40px;
+  margin-top: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+#button:hover {
+  background-color: rgb(228, 224, 224);
+
+  .material-icons {
+    cursor: pointer;
+    color: #000000;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .button {
+    left: 25%;
+  }
+}

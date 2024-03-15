@@ -1,0 +1,37 @@
+<div class="LoginPageContainer">
+  <div class="LoginPageInnerContainer">
+    <div class="ImageContianer">
+      <img src="https://i.imgur.com/MYZd7of.png" class="GroupImage">
+    </div>
+    <!-- Login -->
+    <div class="LoginFormContainer">
+      <div class="right-image" fxLayout="row" fxLayoutAlign="end start">
+        <div class="LoginFormInnerContainer">
+          <div class="LogoContainer" fxLayoutAlign="center center">
+            <img src="./assets/3.png" class="logo">
+          </div>
+          <header class="header">SIGN UP</header>
+          <header class="subHeader">Welcome to <b>Flipo Books!</b> Register your Details Here.</header>
+          <form [formGroup]="signupForm">
+            <div fxLayout="column">
+              <mat-form-field appearance="fill">
+                <mat-label>Email*</mat-label>
+                <input matInput type="text" placeholder="Enter your Email Address" formControlName="email">
+              </mat-form-field>
+              <div class="checkboxContainer">
+                <label for="RememberMe">An email will be sent to you for <br> account verification.</label>
+              </div>
+              <button mat-button class="LoginButton">Register</button>
+              <div class="footer">
+                Already have an account ? <a (click)="onSignup()" class="signupLink">Log In</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="login-image">
+          <img src="./assets/login.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

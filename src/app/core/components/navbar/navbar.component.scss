@@ -1,0 +1,31 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+// .toolbar-container {
+//   padding-bottom: 55px;
+// }
+
+// .navbar {
+//   position: fixed;
+//   top: 0;
+//   z-index: 1;
+// }
+
+.menu-logout {
+  font-size: 16px;
+  cursor: pointer;
+  place-content: center;
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+
+.menu-logout p {
+  margin: 12px 6px;
+}
+
+.menu-logout.material-icons {
+  font-size: 20px;
+}

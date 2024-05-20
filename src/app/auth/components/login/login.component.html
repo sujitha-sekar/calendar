@@ -27,9 +27,9 @@
                 </div>
                 <a href="forgotpassword" class="ForgotPasswordLink">Forgot Password?</a>
               </div>
-              <button mat-button class="LoginButton">Log In</button>
+              <button mat-button class="LoginButton" (click)="onLogin()">Log In</button>
               <div class="footer">
-                Not a Member yet ? <a (click)="onLogin()" class="signupLink">Sign up</a>
+                Not a Member yet ? <a (click)="onSignup()" class="signupLink">Sign up</a>
               </div>
             </div>
           </form>

@@ -9,7 +9,7 @@ import { BannerComponent } from './home/components/banner/banner.component';
 import { AboutComponent } from './home/components/about/about.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/flipo', pathMatch: 'full'},
+  { path: '', redirectTo: '/app/dashboard', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'forgotpassword', component: ForgotPasswordComponent},

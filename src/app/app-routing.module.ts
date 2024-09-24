@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/app/dashboard', pathMatch: 'full'},
   { path: 'signup', component: SignupComponent},
   { path: 'forgotpassword', component: ForgotPasswordComponent},
-  { path: 'app', component: NavbarComponent, children : [
+  { path: 'app', component: DashboardComponent, children : [
     { path: 'dashboard', component: DashboardComponent},
   ]},
 

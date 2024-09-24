@@ -1,0 +1,158 @@
+.outer-container {
+  background-color: #7da2a9;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.menu-list {
+  color: #f7f7f7;
+  padding-right: 30px;
+}
+
+.menu-list:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000;
+}
+
+.main-image {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  padding-bottom: 150px;
+}
+
+.home {
+  background-color: #7da2a9;
+}
+
+.home-image {
+  width: 80%;
+  height: 500px;
+  object-fit: cover;
+  background-color: #7da2a9;
+  border-radius: 20px;
+}
+
+.aboutus {
+  background-color: #7da2a9;
+  padding: 100px 60px;
+}
+
+.about-head {
+  color: #f7f7f7;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.divider {
+  height: 1.5px;
+  width: 100px;
+  background-color: #f7f7f7;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  color: #f7f7f7;
+}
+
+.stand-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.contactus {
+  background-color: #7da2a9;
+  padding: 100px 60px;
+}
+
+.contact-title, .contact-head, .contact-content {
+  color: #f7f7f7;
+}
+
+.contact-head {
+  font-size: 34px;
+  font-family: dinmed;
+}
+
+.contact-content {
+  margin-top: 35px;
+  margin-bottom: 55px;
+  font-size: 15px;
+}
+
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #b4c4d5;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #f7f7f7;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 13px;
+    cursor: text;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.form__label:hover {
+  color: #000;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;  
+  border-image: linear-gradient(to right, #f7f7f7 , #f7f7f7);
+  border-image-slice: 1;
+}
+
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+.icons {
+  width: 20px; 
+  margin-right: 20px; 
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.icons:hover {
+  transform: translateY(-4px);
+}

@@ -26,7 +26,11 @@
   width: auto;
   height: auto;
   object-fit: cover;
-  padding-bottom: 150px;
+  padding-bottom: 30px;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: #7da2a9;
 }
 
 .home {

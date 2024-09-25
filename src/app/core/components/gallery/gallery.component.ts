@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class GalleryComponent {
 
+  array = [
+    { title: 'Gallery', imageUrl: '../../../../assets/LittleBook.jpg'}
+  ]
+
 }

@@ -12,15 +12,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() { }
 
-  scrollToSection(value: string) {
-    const element = document.getElementById(value);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   onNavigate() {
-    this.router.navigate(['/gallery']);
+    this.router.navigate(['app/gallery']);
   }
 
 }

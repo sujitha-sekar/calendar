@@ -5,10 +5,12 @@ import { ForgotPasswordComponent } from './auth/components/forgot-password/forgo
 import { DashboardComponent } from './core/components/dashboard/dashboard.component';
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { LoginComponent } from './auth/components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/app/dashboard', pathMatch: 'full'},
   { path: 'signup', component: SignupComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'forgotpassword', component: ForgotPasswordComponent},
   { path : 'app', component: NavbarComponent, children : [
     { path: 'dashboard', component: DashboardComponent},

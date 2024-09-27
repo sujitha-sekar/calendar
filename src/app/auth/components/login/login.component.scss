@@ -2,148 +2,103 @@
   margin: 0px;
   font-family: "Montserrat", sans-serif;
 }
-
 .LoginPageContainer {
-  height: 100vh;
-  overflow: auto;
+  background-color: #7da2a9;
+
 }
 
-.LoginPageInnerContainer {
-  display: flex;
-  min-height: 100%;
+.ImageContianer {
+  width: 500px;
+  height: auto ;
 }
 
-.LoginPageInnerContainer .ImageContianer {
-  width: 34%;
-  background-color: #e1dfec;
-  min-height: 100%;
-  padding: 5% 5% 0% 6%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 300px;
-  
-}
-
-.LoginPageInnerContainer .ImageContianer .GroupImage {
-  width: 100%;
-  display: block;
-}
-
-.LoginPageInnerContainer .LoginFormContainer {
-  flex-grow: 2;
-  background-color: white;
-  min-height: 100%;
-  // padding: 1% 0% 2% 5% ;
-  background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.right-image{
-  width: 100%;
+.GroupImage {
   height: 100%;
-  padding-right: 150px;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .LogoContainer .logo {
-  height: 180px;
-}
-
-.LoginFormInnerContainer{
-  margin-right: 20px;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .header {
-  font-size: 35px;
-  font-weight: 500;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .subHeader {
-  color: #9aa4ad;
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .inputContainer {
-  color: #3f3f45;
-  margin: 20px 0px;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .inputContainer .label {
-  display: flex;
   width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  margin-right: 7px;
-  margin-bottom: 10px;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .inputContainer .label .labelIcon {
-  width: 20px;
-  margin-right: 10px;
-  display: block;
+.logo {
+  width: 250px;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .inputContainer .input {
-  display: block;
-  width: calc(100% - 20px);
-  font-size: 15px;
-  padding: 10px;
-  border: 1px solid #d6d7db;
-  border-radius: 5px;
-  margin-top: 5px;
-  outline: 0px !important;
-}
-
-.LoginPageInnerContainer .LoginFormContainer .OptionsContainer {
-  display: flex;
-  justify-content: space-between;
+.subtext {
+  color: #f7f7f7;
+  font-size: 20px;
 }
 
 .LoginFormContainer {
-  display: flex;
-  align-items: center;
+  padding: 10px 60px;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .checkbox {
-  width: 15px;
-  height: 15px;
-  margin: 0px;
-  display: block;
-  border: 1px solid #d6d7db;
+.signup-here {
+  color: #7da2a9;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .checkboxContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.form-container {
+  margin: 30px 0px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding: 20px;
+  width: 70%;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .checkboxContainer label {
+.checkboxContainer {
   display: block;
   padding: 0px 5px;
-  color: #9aa4ad;
+  color: #f7f7f7;
 }
 
-.LoginPageInnerContainer .LoginFormContainer .ForgotPasswordLink {
+.checkboxContainer label {
+  display: block;
+  padding: 0px 5px;
+  color: #e7483b;
+  text-align: center;
+}
+
+.LoginButton {
+  padding: 0px 24px;
+  margin-top: 30px;
+  display: block;
+  width:fit-content;
+  border-radius: 20px;
+  font-size: 15px;
+  background-color: #7da2a9;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px 1px rgb(203 203 204);
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: #f7f7f7;
+}
+
+.OptionsContainer {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 8px 8px;
+}
+
+.signupLink {
+  color: #7da2a9;
+  cursor: pointer;
+}
+
+.ForgotPasswordLink {
   color: #e7483b;
   text-decoration: none;
 }
 
-.LoginFormContainer .LoginFormInnerContainer .LoginButton {
-  margin-top: 30px;
-  display: block;
-  width: 100%;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  color: white;
-  background-color: #2e1f7a;
-  cursor: pointer;
-  box-shadow: 3px 3px 3px 1px rgb(203 203 204);
+.ForgotPasswordLink:hover {
+  text-decoration: underline;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
 }
 
 .footer {
@@ -151,50 +106,3 @@
   padding: 8px;
 }
 
-.signupLink{
-  color: #2e1f7a;
-}
-
-.login-image{
-  width: 150px;
-  height: auto;
-  img {
-    border-bottom-left-radius: 300px;
-  }
-}
-
-.signupLink:hover {
-  cursor: pointer;
-}
-
-
-@media only screen and (max-width: 1200px) {
-  .LoginPageInnerContainer .ImageContianer {
-      width: 50%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .LoginPageInnerContainer .ImageContianer {
-      display: none;
-  }
-
-  .LoginFormContainer {
-      justify-content: center;
-  }
-}
-.LoginPageContainer::-webkit-scrollbar {
-  width: 5px;
-}
-
-.LoginPageContainer::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.LoginPageContainer::-webkit-scrollbar-thumb {
-  background: #2e1f7a;
-}
-
-.LoginPageContainer::-webkit-scrollbar-thumb:hover {
-  background: #4520ff;
-}

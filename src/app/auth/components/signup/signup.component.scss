@@ -9,8 +9,8 @@
 }
 
 .ImageContianer {
-  width: 300px;
-  height: auto;
+  width: 500px;
+  height: auto ;
 }
 
 .GroupImage {
@@ -31,11 +31,19 @@
   padding: 10px 60px;
 }
 
+.signup-here {
+  color: #7da2a9;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
 .form-container {
   margin: 30px 0px;
   background-color: #f7f7f7;
   border-radius: 20px;
   padding: 20px;
+  width: 60%;
 }
 
 .checkboxContainer {
@@ -74,4 +82,5 @@
 
 .signupLink {
   color: #7da2a9;
+  cursor: pointer;
 }

@@ -1,16 +1,19 @@
 <div class="LoginPageContainer">
   <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="50%" class="ImageContianer">
-      <img src="../../../../assets/mall.jpg" class="GroupImage">
+    <div fxFlex="50%" fxLayoutAlign="center center">
+      <div class="ImageContianer">
+        <img src="../../../../assets/signin1.png" class="GroupImage">
+      </div>
     </div>
     <!-- Login -->
     <div fxFlex="50%" class="LoginFormContainer" fxLayoutAlign="center center" fxLayout="column">
       <img class="logo" src="../../../../assets/SkyHAWKS.png">
       <p class="subtext">Welcome to SKYHAWKS!</p>
       <div class="form-container" fxLayoutAlign="center center" fxLayout="column">
+        <p class="signup-here">Signup Here!</p>
         <form [formGroup]="signupForm">
           <div fxLayout="column"  fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Email*</mat-label>
               <input matInput type="text" placeholder="Enter your Email Address" formControlName="email">
             </mat-form-field>

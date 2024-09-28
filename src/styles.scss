@@ -9,7 +9,7 @@ $custom-primary-color: (
   200 : #978fbd,
   300 : #6d62a2,
   400 : #4d418e,
-  500 : #2e1f7a,
+  500 : #7da2a9,
   600 : #291b72,
   700 : #231767,
   800 : #1d125d,
@@ -47,6 +47,11 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary,
     ));
 
 @include mat.all-component-themes($my-theme);
+
+:root {
+  --grey-color: #7da2a9;
+  --white-color: #f7f7f7;
+}
 
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";

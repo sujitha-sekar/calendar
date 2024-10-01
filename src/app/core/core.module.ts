@@ -4,6 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
 
 
 
@@ -11,7 +12,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
   declarations: [
     DashboardComponent,
     NavbarComponent,
-    GalleryComponent
+    GalleryComponent,
+    AddProjectComponent
   ],
   imports: [
     CommonModule,

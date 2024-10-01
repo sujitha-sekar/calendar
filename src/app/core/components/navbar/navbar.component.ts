@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
   constructor(private router: Router) { }
+
+  ngOnInit() { }
 
   scrollToSection(value: string) {
     const element = document.getElementById(value);
@@ -17,5 +19,9 @@ export class NavbarComponent {
     } else {
       this.router.navigate(['app/dashboard'])
     }
+  }
+
+  onNavigate() {
+    this.router.navigate(['app/addProject']);
   }
 }

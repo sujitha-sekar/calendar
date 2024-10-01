@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-add-project',
@@ -7,38 +8,52 @@ import { Component } from '@angular/core';
 })
 export class AddProjectComponent {
 
-  demoMessage: string = '';
+  htmlContent = '';
 
-  dragStart(event: DragEvent) {
-    if (event.target instanceof HTMLElement) {
-      event.dataTransfer?.setData("text", event.target.id);
-    }
-  }
+  setupConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+   
+  };
 
-  dragging(event: DragEvent) {
-    this.demoMessage = "The p element is being dragged";
-  }
+  // demoMessage: string = '';
 
-  allowDrop(event: DragEvent) {
-    event.preventDefault();
-  }
+  // dragStart(event: DragEvent) {
+  //   if (event.target instanceof HTMLElement) {
+  //     event.dataTransfer?.setData("text", event.target.id);
+  //   }
+  // }
 
-  drop(event: DragEvent) {
-    event.preventDefault();
+  // dragging(event: DragEvent) {
+  //   this.demoMessage = "The p element is being dragged";
+  // }
+
+  // allowDrop(event: DragEvent) {
+  //   event.preventDefault();
+  // }
+
+  // drop(event: DragEvent) {
+  //   event.preventDefault();
     
-    const data = event.dataTransfer?.getData("text");
+  //   const data = event.dataTransfer?.getData("text");
   
-    if (data) {  // Check if data is not undefined
-      const draggedElement = document.getElementById(data);
+  //   if (data) {  // Check if data is not undefined
+  //     const draggedElement = document.getElementById(data);
   
-      if (draggedElement && event.target instanceof HTMLElement) {
-        event.target.appendChild(draggedElement);
-      }
+  //     if (draggedElement && event.target instanceof HTMLElement) {
+  //       event.target.appendChild(draggedElement);
+  //     }
   
-      this.demoMessage = "The p element was dropped";
-    } else {
-      console.error('No data found in the drag event.');
-    }
-  }
+  //     this.demoMessage = "The p element was dropped";
+  //   } else {
+  //     console.error('No data found in the drag event.');
+  //   }
+  // }
   
 }

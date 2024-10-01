@@ -1,14 +1,14 @@
-<div>
+<div class="outer-container">
   <div class="outer">
     <div fxLayout="row" fxLayoutGap="3%">
       <div fxFlex="27%" class="design-container" fxLayout="column">
         <div fxLayout="row" fxLayoutAlign="space-between" style="margin-bottom: 20px;">
           <h1>Create your own designs</h1>
-          <div class="icon-border">
+          <!-- <div class="icon-border">
             <span class="material-symbols-outlined">
               keyboard_double_arrow_left
-              </span>
-          </div>
+            </span>
+          </div> -->
         </div>
         <div fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center start">
           <div class="design-box">
@@ -24,6 +24,10 @@
       <div fxFlex="73%" class="design-container1">
         <h1>View your designs</h1>
         <mat-divider></mat-divider>
+        <angular-editor [placeholder]="'...Enter the text here....'" [config]="setupConfig"
+          [(ngModel)]="htmlContent"></angular-editor>
+          <h1>Content</h1>
+          <p>{{htmlContent}}</p>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    AngularEditorModule
   ]
 })
 export class CoreModule { }

@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
 @import '@fortawesome/fontawesome-free/css/all.css';
+@import '../node_modules/font-awesome/css/font-awesome.css';
 
 // Define $custom-primary-color here in styles.scss
 $custom-primary-color: (

@@ -1,0 +1,57 @@
+.outer {
+  padding: 20px 30px;
+}
+
+.design-container {
+  background-color: rgb(221 221 221 / 50%);
+  color: var(--white-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.icon-border {
+  border-radius: 50%;
+  border: 1px solid var(--white-color);
+  background-color: var(--grey-color);
+  padding: 8px;
+}
+
+.design-container1 {
+  background-color: var(--white-color);
+  color: var(--grey-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.design-box {
+  background-color: var(--white-color);
+  border: 1px solid var(--grey-color);
+  padding: 20px;
+  width: 75px;
+  height: 80px;
+  border-radius: 3px;
+  color: var(--grey-color);
+  text-align: center;
+  font-size: 20px;
+}
+
+.box-image {
+  height: 70px;
+  width: 100%;
+}
+
+// .material-symbols-outlined {
+//   font-variation-settings:
+//       'FILL' 0,
+//       'wght' 400,
+//       'GRAD' 0,
+//       'opsz' 24
+// }
+
+
+// .droptarget {
+//   width: 100px;
+//   height: 35px;
+//   padding: 10px;
+//   border: 1px solid black;
+// }

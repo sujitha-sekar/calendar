@@ -1,11 +1,20 @@
 <div class="outer-container">
   <div fxLayout="row" fxLayoutAlign="space-between">
     <img class="logo" src="../../../../assets/SkyHAWKS.png" />
-    <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxHide.lt-md fxShow fxLayout="row" fxLayoutAlign="center center">
       <a (click)="scrollToSection('home')" class="menu-list">Home</a>
       <a (click)="scrollToSection('aboutus')" class="menu-list">Aboutus</a>
       <a (click)="scrollToSection('contactus')" class="menu-list">Contactus</a>
       <a (click)="onNavigate()" class="menu-list">Add Project</a>
+    </div>
+    <div fxHide fxShow.lt-md fxLayout="row" fxLayoutAlign="center center">
+        <i class="fa-solid fa-bars" [matMenuTriggerFor]="beforeMenu"></i>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="scrollToSection('home')">Home</button>
+        <button mat-menu-item (click)="scrollToSection('aboutus')">Aboutus</button>
+        <button mat-menu-item (click)="scrollToSection('contactus')">Contactus</button>
+        <button mat-menu-item (click)="onNavigate()">Add Project</button>
+      </mat-menu>
     </div>
   </div>
   <router-outlet></router-outlet>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
@@ -13,47 +14,40 @@ export class AddProjectComponent {
   setupConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
-    height: '15rem',
+    height: '17rem',
     minHeight: '5rem',
     placeholder: 'Enter text here...',
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
-   
   };
 
-  // demoMessage: string = '';
+  qualityImg: string[] = [];
 
-  // dragStart(event: DragEvent) {
-  //   if (event.target instanceof HTMLElement) {
-  //     event.dataTransfer?.setData("text", event.target.id);
-  //   }
-  // }
+  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef) {}
 
-  // dragging(event: DragEvent) {
-  //   this.demoMessage = "The p element is being dragged";
-  // }
+  ngAfterViewChecked(): void {
+    const viewContent = this.el.nativeElement.querySelector('.inner');
+    if (viewContent) {
+      const images = viewContent.querySelectorAll('img');
+      images.forEach((img: HTMLElement) => {
+        this.renderer.setStyle(img, 'max-width', '100%');
+        this.renderer.setStyle(img, 'max-height', '300px');
+        this.renderer.setStyle(img, 'object-fit', 'contain');
+        this.renderer.setStyle(img, 'display', 'block');
+        this.renderer.setStyle(img, 'margin', '0 auto');
+      });
+    }
+  }
 
-  // allowDrop(event: DragEvent) {
-  //   event.preventDefault();
-  // }
 
-  // drop(event: DragEvent) {
-  //   event.preventDefault();
+  ngOnInit(): void {
+    this.http.get<string[]>('assets/images.json').subscribe((data) => {
+      this.qualityImg = data.map((filename) => `assets/${filename}`);
+    });
+  }
+
+  onSave() {
     
-  //   const data = event.dataTransfer?.getData("text");
-  
-  //   if (data) {  // Check if data is not undefined
-  //     const draggedElement = document.getElementById(data);
-  
-  //     if (draggedElement && event.target instanceof HTMLElement) {
-  //       event.target.appendChild(draggedElement);
-  //     }
-  
-  //     this.demoMessage = "The p element was dropped";
-  //   } else {
-  //     console.error('No data found in the drag event.');
-  //   }
-  // }
-  
+  }
 }

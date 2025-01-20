@@ -1,23 +1,24 @@
 <div class="outer-container">
   <div fxLayoutAlign="center center">
-    <img style="padding: 50px 0px 120px;" src="../../../../assets/Gallery.png" />
+    <img class="main-img" src="../../../../assets/Gallery.png" />
   </div>
   <div class="container" fxLayout="column" fxLayoutGap="3%">
     <p class="head">Recent Works</p>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center" fxLayoutAlign="space-between center">
       <h1 class="title">Let's Look The Recent Project Gallery</h1>
       <span class="button">View More Projects &nbsp;<i class="fa-solid fa-arrow-right"></i></span>
     </div>
   </div>
   <div class="container">
     <div *ngFor="let item of array;let i= index">
-      <div fxLayout="row" fxLayoutAlign="space-around">
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center" fxLayoutGap.lt-sm="2%" fxLayoutAlign="space-around">
         <div fxLayout="column" fxLayoutAlign="center center">
           <h1 class="list-title">0{{i+1}}</h1>
           <h3 class="list-title2">{{item?.title}}</h3>
         </div>
-        <div>
-          <img class="list-image" [src]="item?.imageUrl" />
+        <div class="head">
+          <!-- <img class="list-image" [src]="item?.imageUrl" /> -->
+          <h1>Little Black Book</h1>
         </div>
         <div fxLayoutAlign="center center">
           <div class="icon-border">

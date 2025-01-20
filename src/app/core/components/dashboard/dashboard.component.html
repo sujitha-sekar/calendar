@@ -7,8 +7,8 @@
     <img class="home-image" src="../../../../assets/book.jpg" />
   </div>
   <div id="aboutus" class="aboutus" fxLayout="column">
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3%">
-      <div fxFlex="60%" fxLayout="column">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap="3%">
+      <div fxFlex="60%" fxFlex.lt-sm="100%" fxLayout="column">
         <h1 class="about-head">ABOUTUS</h1>
         <div class="divider"></div>
         <h4 class="about-content">At the heart of what we do is a passion for solving real-world problems. We believe
@@ -16,7 +16,7 @@
           opportunities for growth. Whether it's developing cutting-edge technology, designing user-centered
           experiences, or delivering exceptional service, our focus is always on providing value that lasts.</h4>
       </div>
-      <div fxFlex="40%">
+      <div fxFlex="40%" fxFlex.lt-sm="100%">
         <img class="stand-image" src="../../../../assets/chair.jpg" />
       </div>
     </div>
@@ -25,7 +25,7 @@
     <p class="contact-title">NEWS & UPDATES</p>
     <h2 class="contact-head">Get the latest</h2>
     <h5 class="contact-content">Sign up to our newsletter and follow us to stay up to date.</h5>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="30px" fxLayoutAlign="space-between center">
       <div class="form__group field">
         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
         <label for="name" class="form__label">SIGN ME UP</label>
@@ -49,5 +49,8 @@
         </svg>
       </div>
     </div>
+  </div>
+  <div class="footer">
+    <h1>Copyright @2025, Designed by SUJITHA</h1>
   </div>
 </div>

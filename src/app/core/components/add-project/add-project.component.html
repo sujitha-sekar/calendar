@@ -1,47 +1,36 @@
 <div class="outer-container">
   <div class="outer">
-    <div fxLayout="row" fxLayoutGap="3%">
-      <div fxFlex="27%" class="design-container" fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="space-between" style="margin-bottom: 20px;">
-          <h1>Create your own designs</h1>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3%">
+      <div fxFlex="27%" fxFlex="355px" class="design-container" fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h1>Use Quality Images</h1>
           <!-- <div class="icon-border">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" (click)="sideNav()">
               keyboard_double_arrow_left
             </span>
           </div> -->
         </div>
-        <div fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center start">
-          <div class="design-box">
-            <img class="box-image" src="../../../../assets/head.png" />
-            <p>Heading</p>
-          </div>
-          <div class="design-box">
-            <img class="box-image" src="../../../../assets/text.png" />
-            <p>Textarea</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center start">
+          <div *ngFor="let image of qualityImg" class="img-container">
+            <div class="design-box">
+              <img class="box-image" [src]="image" />
+            </div>
           </div>
         </div>
       </div>
-      <div fxFlex="73%" class="design-container1">
-        <h1>View your designs</h1>
+      <div fxFlex="73%" fxFlex="100%" class="design-container1">
+        <h1>Create your own designs</h1>
         <mat-divider></mat-divider>
         <angular-editor [placeholder]="'...Enter the text here....'" [config]="setupConfig"
           [(ngModel)]="htmlContent"></angular-editor>
-          <h1>Content</h1>
-          <p>{{htmlContent}}</p>
       </div>
+    </div>
+    <div class="view-content">
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <h1>View your designs here</h1>
+        <button mat-raised-button (click)="onSave()">Save Project</button>
+      </div>
+      <div class="inner" [innerHTML]="htmlContent"></div>
     </div>
   </div>
 </div>
-
-<!-- <h1>HTML DOM Events</h1>
-<h2>The ondrag Event</h2>
-
-<p>Drag the text up and down between the two rectangles:</p>
-
-<div class="droptarget" (drop)="drop($event)" (dragover)="allowDrop($event)">
-  <p (dragstart)="dragStart($event)" (drag)="dragging($event)" draggable="true" id="dragtarget">Drag me!</p>
-</div>
-
-<p id="demo">{{demoMessage}}</p>
-
-<div class="droptarget" (drop)="drop($event)" (dragover)="allowDrop($event)"></div> -->

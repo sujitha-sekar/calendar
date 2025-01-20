@@ -142,3 +142,31 @@
 .icons:hover {
   transform: translateY(-4px);
 }
+
+.footer {
+  background-color: var(--white-color);
+  width: 98.5%;
+  padding: 10px;
+}
+
+.footer>h1 {
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  color: var(--grey-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 960px) and (min-width: 600px) {
+  .main-image {
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main-image {
+    width: 300px;
+  }
+}

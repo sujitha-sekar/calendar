@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-add-project',
@@ -24,7 +25,9 @@ export class AddProjectComponent {
 
   qualityImg: string[] = [];
 
-  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef,
+    private projectService: ProjectService
+  ) {}
 
   ngAfterViewChecked(): void {
     const viewContent = this.el.nativeElement.querySelector('.inner');
@@ -48,6 +51,12 @@ export class AddProjectComponent {
   }
 
   onSave() {
-    
+    if(this.htmlContent) {
+      this.projectService.createProjects(this.htmlContent).subscribe((res: any) => {
+        if(res) {
+          console.log('create: ', res);
+        }
+      })
+    }
   }
 }

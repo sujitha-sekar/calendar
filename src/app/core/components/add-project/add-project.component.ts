@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { AngularEditorConfig, UploadResponse } from '@kolkov/angular-editor';
 import { ProjectService } from '../../services/project.service';
 
 @Component({
@@ -10,6 +10,9 @@ import { ProjectService } from '../../services/project.service';
 })
 export class AddProjectComponent {
 
+  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef,
+    private projectService: ProjectService
+  ) { }
   htmlContent = '';
 
   setupConfig: AngularEditorConfig = {
@@ -17,17 +20,54 @@ export class AddProjectComponent {
     spellcheck: true,
     height: '17rem',
     minHeight: '5rem',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    translate: 'yes',
+    enableToolbar: true,
+    showToolbar: true,
     placeholder: 'Enter text here...',
-    translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
-  };
+    defaultParagraphSeparator: '',
+    defaultFontName: '',
+    defaultFontSize: '',
+    fonts: [
+      { class: 'arial', name: 'Arial' },
+      { class: 'times-new-roman', name: 'Times New Roman' },
+      { class: 'calibri', name: 'Calibri' },
+      { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+    ],
+    customClasses: [
+      {
+        name: 'quote',
+        class: 'quote',
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
+      },
+    ],
+    uploadUrl: 'v1/image',
+    upload: (file: File) => {
+      const formData = new FormData();
+      formData.append('image', file);
+      return this.http.post<UploadResponse>('v1/image', formData, { observe: 'events' });
+    },
+    uploadWithCredentials: true,
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+      ['bold', 'italic'],
+      ['fontSize']
+    ]
+  }
 
   qualityImg: string[] = [];
 
-  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef,
-    private projectService: ProjectService
-  ) {}
 
   ngAfterViewChecked(): void {
     const viewContent = this.el.nativeElement.querySelector('.inner');
@@ -51,9 +91,9 @@ export class AddProjectComponent {
   }
 
   onSave() {
-    if(this.htmlContent) {
+    if (this.htmlContent) {
       this.projectService.createProjects(this.htmlContent).subscribe((res: any) => {
-        if(res) {
+        if (res) {
           console.log('create: ', res);
         }
       })

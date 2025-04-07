@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
+import { BlogList, GetAllBlogsResponse } from '../../models/gallery.modle';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit, OnDestroy {
 
-  projects: any;
+  blogList: BlogList[] = [];
+  subscriptionObject = new Subscription();
 
-  constructor(private projectService: ProjectService) {}
-
-  
-  array = [
-    { title: 'Gallery', imageUrl: '../../../../assets/LittleBook.jpg'}
-  ]
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-      this.projectService.getAllProjects().subscribe((res: any) => {
-        if(res) {
-          console.log('get project', res);
-          this.projects = res;
-        }
-      })
+    this.subscriptionObject.add(this.projectService.getAllBlogs().subscribe((res: GetAllBlogsResponse) => {
+      if (res?.blogList?.length > 0) {
+        this.blogList = res.blogList;
+      }
+    }));
+  };
+
+  ngOnDestroy(): void {
+    if (this.subscriptionObject) this.subscriptionObject.unsubscribe();
   }
 }

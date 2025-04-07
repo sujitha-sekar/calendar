@@ -11,7 +11,7 @@
 
 .head {
   color: #f7f7f7;
-  font-size: 22px;
+  text-align: center;
   place-content: center;
 }
 
@@ -52,6 +52,13 @@
   font-size: 25px;
 }
 
+.list-content {
+  color: #f7f7f7;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", Sans-serif;
+}
+
 .list-image {
   width: 250px;
   height: 250px;
@@ -62,6 +69,7 @@
   border-radius: 50%;
   border: 1px solid #f7f7f7;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 svg {

@@ -4,21 +4,24 @@
   </div>
   <div class="container" fxLayout="column" fxLayoutGap="3%">
     <p class="head">Recent Works</p>
-    <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center" fxLayoutAlign="space-between center">
-      <h1 class="title">Let's Look The Recent Project Gallery</h1>
-      <span class="button">View More Projects &nbsp;<i class="fa-solid fa-arrow-right"></i></span>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center"
+      fxLayoutAlign="space-between center">
+      <h1 class="title">Let's Look The Recent Blogs Gallery</h1>
+      <span class="button">View More Blogs &nbsp;<i class="fa-solid fa-arrow-right"></i></span>
     </div>
   </div>
   <div class="container">
-    <div *ngFor="let item of array;let i= index">
-      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center" fxLayoutGap.lt-sm="2%" fxLayoutAlign="space-around">
+    <div *ngFor="let item of blogList;let i= index">
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-between center" fxLayoutGap.lt-sm="2%"
+        fxLayoutAlign="space-around">
         <div fxLayout="column" fxLayoutAlign="center center">
           <h1 class="list-title">0{{i+1}}</h1>
-          <h3 class="list-title2">{{item?.title}}</h3>
+          <h3 class="list-title2">{{item?.category}}</h3>
         </div>
         <div class="head">
           <!-- <img class="list-image" [src]="item?.imageUrl" /> -->
-          <h1>Little Black Book</h1>
+          <h1>{{item?.blogTitle}}</h1>
+          <p class="list-content">{{item?.blogDescription}}</p>
         </div>
         <div fxLayoutAlign="center center">
           <div class="icon-border">

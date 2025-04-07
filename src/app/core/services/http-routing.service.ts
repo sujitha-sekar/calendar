@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -11,11 +12,11 @@ export class HttpRoutingService {
   
   apiUrl = environment.apiUrl;
 
-  getMethod(url: string) {
-    return this.http.get(this.apiUrl + 'v1/' + url);
+  getMethod<T>(url: string): Observable<T> {
+    return this.http.get<T>(this.apiUrl + 'v1/' + url);
   }
 
-  postMethod(url: string, data: any) {
-    return this.http.post(this.apiUrl + 'v1/' + url, data);
+  postMethod<T>(url: string, data: any): Observable<T> {
+    return this.http.post<T>(this.apiUrl + 'v1/' + url, data);
   }
 }

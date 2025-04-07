@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpRoutingService } from './http-routing.service';
+import { GetAllBlogsResponse } from '../models/gallery.modle';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class ProjectService {
     return this.httpRouting.postMethod('createProjects', data);
   }
 
-  getAllProjects() {
-    return this.httpRouting.getMethod('getAllProjects');
+  getAllBlogs(): Observable<GetAllBlogsResponse> {
+    return this.httpRouting.getMethod<GetAllBlogsResponse>('getAllBlogs');
   }
 }

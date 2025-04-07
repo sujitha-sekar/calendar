@@ -1,8 +1,7 @@
 'use strict';
 
-// Define a model for department table
 module.exports = (sequelize, DataTypes) => {
-  var Model = sequelize.define('bloglist', {
+  var Model = sequelize.define('blogdetails', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -24,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    blogContent: {
+      type: DataTypes.TEXT('long'),
+      allowNull: true
+    },
     created: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -35,11 +38,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   }, {
-    tableName: 'bloglist'
+    tableName: 'blogdetails'
   });
-  // Adding a class level method.
+
   Model.associate = function (models) {
-    this.blogId = this.belongsTo(models.blogdetails);
+    // define associations here
   };
+
   return Model;
 };

@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    blogId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     category: {
       type: DataTypes.STRING,
       allowNull: false
@@ -39,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   // Adding a class level method.
   Model.associate = function (models) {
-    this.blogId = this.belongsTo(models.blogdetails);
+    this.id = this.belongsTo(models.blogdetails);
   };
   return Model;
 };

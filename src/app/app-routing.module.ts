@@ -6,7 +6,7 @@ import { DashboardComponent } from './core/components/dashboard/dashboard.compon
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { LoginComponent } from './auth/components/login/login.component';
-import { AddProjectComponent } from './core/components/add-project/add-project.component';
+import { AddProjectComponent } from './core/components/add-blog/add-project.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/app/dashboard', pathMatch: 'full'},

@@ -7,10 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    blogId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     category: {
       type: DataTypes.STRING,
       allowNull: false

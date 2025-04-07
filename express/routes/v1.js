@@ -5,5 +5,6 @@ require('./../middleware/passport')(passport);
 
 const BlogController = require('../controllers/blogs.controller');
 router.get('/getAllBlogs', BlogController.getAllBlogs);
+router.post('/createBlog', BlogController.createBlog);
 
 module.exports = router;

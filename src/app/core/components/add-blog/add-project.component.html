@@ -21,9 +21,37 @@
       <div fxFlex="73%" fxFlex="100%" class="design-container1">
         <h1>Create your own designs</h1>
         <mat-divider></mat-divider>
-        <angular-editor [placeholder]="'...Enter the text here....'" [config]="setupConfig"
+        <div class="design-box1">
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <h1>Blog Title</h1>
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Title</mat-label>
+              <input matInput [(ngModel)]="title" />
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <h1>Blog Category</h1>
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Category</mat-label>
+              <mat-select [(ngModel)]="selectedCategory">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                  {{ category }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <h1>Blog Description</h1>
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Description</mat-label>
+              <textarea matInput [(ngModel)]="description"></textarea>
+            </mat-form-field>
+          </div>
+        <h1>Blog Content</h1>
+        <angular-editor [placeholder]="'...Enter the Blog content here....'" [config]="setupConfig"
           [(ngModel)]="htmlContent"></angular-editor>
       </div>
+    </div>
     </div>
     <div class="view-content">
       <div fxLayout="row" fxLayoutAlign="space-between">

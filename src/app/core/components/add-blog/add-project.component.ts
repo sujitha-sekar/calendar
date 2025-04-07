@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { AngularEditorConfig, UploadResponse } from '@kolkov/angular-editor';
 import { ProjectService } from '../../services/project.service';
+import { CreateBlogInput, CreateBlogResponse } from '../../models/add-blog.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-project',
@@ -11,9 +13,13 @@ import { ProjectService } from '../../services/project.service';
 export class AddProjectComponent {
 
   constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef,
-    private projectService: ProjectService
+    private projectService: ProjectService, private router: Router
   ) { }
-  htmlContent = '';
+  htmlContent!: string;
+  title!: string;
+  description!: string;
+  selectedCategory!: string;;
+  categories: string[] = ['Biography', 'Politics', 'Nature', 'Sprituality', 'Science', 'Technology', 'Health', 'Education', 'Travel', 'Food'];
 
   setupConfig: AngularEditorConfig = {
     editable: true,
@@ -91,12 +97,26 @@ export class AddProjectComponent {
   }
 
   onSave() {
-    if (this.htmlContent) {
-      this.projectService.createProjects(this.htmlContent).subscribe((res: any) => {
-        if (res) {
-          console.log('create: ', res);
+    if (this.htmlContent && this.title && this.description && this.selectedCategory !== null && this.selectedCategory !== undefined) {
+      // Create the blog payload using the form data
+      const blogPayload: CreateBlogInput = {
+        blogTitle: this.title,
+        blogDescription: this.description,
+        blogContent: this.htmlContent,
+        category: this.selectedCategory,
+      };
+      this.projectService.createBlog(blogPayload).subscribe((res: CreateBlogResponse) => {
+        if(res?.success) {
+          // Reset the form fields after successful submission
+          this.htmlContent = '';
+          this.title = '';
+          this.description = '';
+          this.selectedCategory = '';
+          this.router.navigate(['/gallery']);
+        } else {
+          alert('Error creating blog. Please try again.');
         }
-      })
+      });
     }
   }
 }

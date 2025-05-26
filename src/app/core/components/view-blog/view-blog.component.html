@@ -9,7 +9,7 @@
     <h1>{{ data.blogTitle }}</h1>
     <p><strong>Date:</strong> {{ data.blogDate }}</p>
     <img [src]="data.blogImage" alt="{{ data.blogTitle }}" width="100%" />
-    <p>{{ data.blogDescription }}</p>
+    <p>{{ data.content }}</p>
   </mat-dialog-content>
   <mat-dialog-actions fxLayoutAlign="end end">
     <button mat-stroked-button color="primary" [mat-dialog-close]="false">No</button>

@@ -10,4 +10,5 @@ export interface BlogList {
   blogDate: string;
   blogTitle: string;
   blogDescription: string;
+  content: string;
 }

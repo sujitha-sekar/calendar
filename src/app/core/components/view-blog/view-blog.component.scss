@@ -1,0 +1,24 @@
+.dialog-outer {
+  padding: 20px 0 20px 25px;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  color: #afadad !important;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  border-color: #afadad !important;
+}
+
+.dialog-header {
+  padding-right: 40px;
+  margin-bottom: 20px;
+
+  h1 {
+    margin: 0;
+  }
+
+  i {
+    font-size: 30px;
+  }
+}

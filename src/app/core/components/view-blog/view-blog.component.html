@@ -1,1 +1,18 @@
-<p>view-blog works!</p>
+<div class="dialog-outer">
+  <div fxLayoutAlign="space-between center" fxLayout="row" class="dialog-header">
+    <h1 mat-dialog-header>Blog Details</h1>
+    <span class="close-button" mat-dialog-close>
+      <i class="fa-solid fa-xmark"></i>
+    </span>
+  </div>
+  <mat-dialog-content>
+    <h1>{{ data.blogTitle }}</h1>
+    <p><strong>Date:</strong> {{ data.blogDate }}</p>
+    <img [src]="data.blogImage" alt="{{ data.blogTitle }}" width="100%" />
+    <p>{{ data.blogDescription }}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayoutAlign="end end">
+    <button mat-stroked-button color="primary" [mat-dialog-close]="false">No</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Yes</button>
+  </mat-dialog-actions>
+</div>

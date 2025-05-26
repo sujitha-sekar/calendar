@@ -16,15 +16,15 @@
         fxLayoutAlign="space-around">
         <div fxLayout="column" fxLayoutAlign="center center">
           <h1 class="list-title">0{{i+1}}</h1>
-          <h3 class="list-title2">{{item?.category}}</h3>
+          <h3 class="list-title2">{{item?.blogDate}}</h3>
         </div>
         <div class="head">
-          <!-- <img class="list-image" [src]="item?.imageUrl" /> -->
+          <!-- <img class="list-image" [src]="item?.blogImage" /> -->
           <h1>{{item?.blogTitle}}</h1>
           <p class="list-content">{{item?.blogDescription}}</p>
         </div>
         <div fxLayoutAlign="center center">
-          <div class="icon-border">
+          <div class="icon-border" (click)="onNavigate(blogList[i])">
             <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 0 24 24" width="60px" fill="#f7f7f7">
               <path d="M0 0h24v24H0z" fill="none" />
               <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z" />

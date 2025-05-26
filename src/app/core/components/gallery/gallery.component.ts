@@ -1,29 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ProjectService } from '../../services/project.service';
-import { BlogList, GetAllBlogsResponse } from '../../models/gallery.modle';
-import { Subscription } from 'rxjs';
+import { Component, OnInit} from '@angular/core';
+import { BlogList } from '../../models/gallery.modle';
+import { HttpClient } from '@angular/common/http';
+import { ViewBlogService } from '../../services/view-blog.service';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit, OnDestroy {
+export class GalleryComponent implements OnInit {
 
   blogList: BlogList[] = [];
-  subscriptionObject = new Subscription();
-
-  constructor(private projectService: ProjectService) { }
+  constructor(private http: HttpClient,
+    private viewBlogService: ViewBlogService
+  ) { }
 
   ngOnInit(): void {
-    this.subscriptionObject.add(this.projectService.getAllBlogs().subscribe((res: GetAllBlogsResponse) => {
-      if (res?.blogList?.length > 0) {
-        this.blogList = res.blogList;
-      }
-    }));
+    this.http.get<BlogList[]>('assets/blogs.json').subscribe((data) => {
+       this.blogList = data;
+    });
   };
 
-  ngOnDestroy(): void {
-    if (this.subscriptionObject) this.subscriptionObject.unsubscribe();
-  }
+  
+onNavigate(data: any): void {
+  this.viewBlogService.openBlogDialog(data);
+}
+
 }

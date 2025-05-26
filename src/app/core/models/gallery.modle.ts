@@ -4,9 +4,10 @@ export interface GetAllBlogsResponse {
 }
 
 export interface BlogList {
-  id: number;
+  id: string;
   blogId: string;
-  category: string;
+  blogImage: string;
+  blogDate: string;
   blogTitle: string;
   blogDescription: string;
 }
